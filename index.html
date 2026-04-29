@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6B4EFF">
+    <title>daily hub ✨</title>
+    <link rel="manifest" href="manifest.json">
+    
+    <link rel="apple-touch-icon" href="icons/launchericon-192x192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Daily Hub">
+    <link rel="icon" type="image/png" sizes="96x96" href="icons/launchericon-96x96.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <div class="container">
+        
+        <!-- HEADER -->
+        <header class="header-card">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1 id="greeting">Olá, Malu</h1>
+                    <p id="date-display">Carregando...</p>
+                </div>
+                <div class="header-actions">
+                    <button id="theme-toggle" class="icon-btn" aria-label="Alternar tema">
+                        <span id="theme-icon">🌙</span>
+                    </button>
+                </div>
+            </div>
+            <div class="header-brand">daily hub</div>
+        </header>
+
+        <!-- BENTO GRID -->
+        <main class="bento-grid">
+            
+            <!-- CLIMA -->
+            <section class="bento-item bento-weather">
+                <div class="card-header">
+                    <span class="card-label">Clima</span>
+                    <span id="weather-emoji" class="card-icon">☀️</span>
+                </div>
+                <div class="weather-main">
+                    <h2 id="weather-temp">--°</h2>
+                    <p id="weather-city">Carregando...</p>
+                    <p id="weather-desc" class="weather-desc">--</p>
+                </div>
+                <p id="weather-tip" class="weather-tip">Carregando dica...</p>
+                <button id="change-city-btn" class="btn-ghost">Mudar cidade</button>
+            </section>
+
+            <!-- FRASE DO DIA -->
+            <section class="bento-item bento-quote">
+                <div class="card-header">
+                    <span class="card-label">Frase do dia</span>
+                    <span class="card-icon-text">"</span>
+                </div>
+                <blockquote>
+                    <p id="quote-text">Carregando...</p>
+                    <cite id="quote-author">—</cite>
+                </blockquote>
+            </section>
+
+            <!-- FOCO DO DIA -->
+            <section class="bento-item bento-focus">
+                <div class="card-header">
+                    <span class="card-label">Foco do dia</span>
+                    <span class="card-icon">🎯</span>
+                </div>
+                <input type="text" id="focus-input" placeholder="No que vou focar hoje?">
+            </section>
+
+            <!-- TAREFAS -->
+            <section class="bento-item bento-tasks">
+                <div class="card-header">
+                    <span class="card-label">Tarefas</span>
+                    <span id="tasks-count" class="badge">0</span>
+                </div>
+                <div class="tabs">
+                    <button class="tab active" data-tab="pessoal">Pessoal</button>
+                    <button class="tab" data-tab="trabalho">Trabalho</button>
+                    <button class="tab" data-tab="faculdade">Faculdade</button>
+                </div>
+                <div class="task-input-wrapper">
+                    <input type="text" id="task-input" placeholder="Nova tarefa...">
+                    <button id="add-task-btn" class="btn-add">+</button>
+                </div>
+                <ul id="task-list" class="task-list"></ul>
+            </section>
+
+            <!-- CONTAGEM REGRESSIVA -->
+            <section class="bento-item bento-countdown">
+                <div class="card-header">
+                    <span class="card-label">Contagem regressiva</span>
+                    <span class="card-icon">⏳</span>
+                </div>
+                <div id="countdown-display">
+                    <p class="countdown-empty">Nenhum evento ainda</p>
+                </div>
+                <button id="add-event-btn" class="btn-ghost">+ Adicionar evento</button>
+            </section>
+
+            <!-- MÚSICA -->
+            <section class="bento-item bento-music">
+                <div class="card-header">
+                    <span class="card-label">Música do dia</span>
+                    <span class="card-icon">🎵</span>
+                </div>
+                <div class="media-content">
+                    <h3 id="music-title">--</h3>
+                    <p id="music-artist">--</p>
+                    <span id="music-genre" class="tag">--</span>
+                </div>
+                <button id="change-music-btn" class="btn-ghost">Trocar</button>
+            </section>
+
+            <!-- COMIDA -->
+            <section class="bento-item bento-food">
+                <div class="card-header">
+                    <span class="card-label">Comida do dia</span>
+                    <span class="card-icon">🍜</span>
+                </div>
+                <div class="media-content">
+                    <h3 id="food-name">--</h3>
+                    <p id="food-desc">--</p>
+                </div>
+                <button id="change-food-btn" class="btn-ghost">Trocar</button>
+            </section>
+
+            <!-- FILMES/SÉRIES -->
+            <section class="bento-item bento-movies">
+                <div class="card-header">
+                    <span class="card-label">Pra assistir</span>
+                    <span class="card-icon">🎬</span>
+                </div>
+                <div class="media-content">
+                    <h3 id="movie-title">--</h3>
+                    <p id="movie-info">--</p>
+                    <span id="movie-genre" class="tag">--</span>
+                </div>
+                <button id="surprise-movie-btn" class="btn-ghost">Me surpreenda ✨</button>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <p>feito com 💜 by malu</p>
+        </footer>
+
+    </div>
+
+    <!-- MODAL CIDADE -->
+    <div id="city-modal" class="modal">
+        <div class="modal-content">
+            <h3>Mudar cidade</h3>
+            <input type="text" id="city-input" placeholder="Ex: Rio de Janeiro">
+            <div class="modal-actions">
+                <button id="cancel-city-btn" class="btn-ghost">Cancelar</button>
+                <button id="save-city-btn" class="btn-primary">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL EVENTO -->
+    <div id="event-modal" class="modal">
+        <div class="modal-content">
+            <h3>Novo evento</h3>
+            <input type="text" id="event-name-input" placeholder="Nome do evento">
+            <input type="date" id="event-date-input">
+            <div class="modal-actions">
+                <button id="cancel-event-btn" class="btn-ghost">Cancelar</button>
+                <button id="save-event-btn" class="btn-primary">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+        <script src="data.js"></script>
+    <script src="script.js"></script>
+    
+    <!-- REGISTRO DO SERVICE WORKER (PWA) -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(registration => {
+                        console.log('✨ Service Worker registrado!', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('❌ Erro no Service Worker:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
